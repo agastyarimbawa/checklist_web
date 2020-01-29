@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Pages extends Controller
 {
@@ -12,7 +13,10 @@ class Pages extends Controller
 
 //=====================================ADMIN/TEKNISI=======================================//
     public function admin(){
-        return view ('pages.otorisasi.indexAdmin');
+        $layanan = DB::table('layanans')->count();
+        $alat = DB::table('layanans')->count();
+        
+        return view ('pages.otorisasi.indexAdmin',['layanan'=> $layanan], ['alat'=> $alat]);
     }
 //=====================================ADMIN/TEKNISI=======================================//
 }
