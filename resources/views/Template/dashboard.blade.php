@@ -120,14 +120,16 @@
                 </a>
               </li>
               <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+                <a href="/checklist" class="nav-link">
                   <i class="nav-icon fas fa-tasks"></i>
                   <p>
                     Checklist
                   </p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
+
+            @if (Auth::user()->role=="admin")
+            <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tools"></i>
               <p>
@@ -182,6 +184,7 @@
                 </p>
               </a>
             </li>
+            @endif
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-file-download"></i>

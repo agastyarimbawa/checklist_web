@@ -29,7 +29,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed text-sm">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -40,12 +40,12 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/dashboard" class="nav-link">Home</a>
+        <a href="/home" class="nav-link">Home</a>
       </li>
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    {{-- <form class="form-inline ml-3"> 
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -54,7 +54,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form>--}}
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -112,7 +112,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-                 <a href="/dashboard" class="nav-link active">
+                 <a href="/home" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -127,67 +127,6 @@
                   </p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tools"></i>
-              <p>
-                Items
-                <i class="fas fa-angle-left right"></i>
-                <!--<span class="badge badge-info right">6</span>-->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Alat</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Checklist</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/pages/layanan" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Layanan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Object Type</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Perangkat</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Lokasi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="fas fa-angle-right nav-icon ml-3"></i>
-                  <p>Function Location</p>
-                </a>
-              </li>
-            </ul>
-            <li class="nav-item has-treeview">
-              <a href="/pages/user" class="nav-link">
-                <i class="nav-icon fas fa-users"></i>
-                <p>
-                  User
-                </p>
-              </a>
-            </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-file-download"></i>
@@ -208,7 +147,7 @@
     <strong>Copyright &copy; 2019-2020 <a href="http://steamcommunity.com/id/mumbo13">Agastya Arimbawa</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> Alpha 0.2
+      <b>Version</b> Alpha Beta 1.0
     </div>
   </footer>
 
@@ -234,6 +173,35 @@
 <script src="/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- ChartJS -->
 <script src="/plugins/chart.js/Chart.min.js"></script>
+<script>
+  $(function () {
+    //-------------
+    //- DONUT CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    var donutData        = {
+      labels: [
+          'Chrome', 
+          'IE',
+          'FireFox', 
+          'Safari', 
+          'Opera', 
+          'Navigator', 
+      ],
+      datasets: [
+        {
+          data: [700,500,400,600,300,100],
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+        }
+      ]
+    }
+    var donutOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+  })
+</script>
 <!-- Sparkline -->
 <script src="/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
