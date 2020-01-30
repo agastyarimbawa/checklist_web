@@ -18,6 +18,7 @@
             </ol>
           </div>
         </div>
+        <hr class="solid">
       </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->

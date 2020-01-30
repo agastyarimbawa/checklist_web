@@ -13,11 +13,12 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/pages/items/layanan">Checklist</a></li>
+                        <li class="breadcrumb-item"><a href="/pages/items/checklist">Checklist</a></li>
                         <li class="breadcrumb-item active">Cek Kondisi</li>
                     </ol>
                 </div>
             </div>
+            <hr class="solid">
         </div><!-- /.container-fluid -->
     </section>
     
@@ -30,7 +31,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Layanan</h3>
+                            <h3 class="card-title">Input Kode Checklist/klik tombol Scan QR untuk melakukan Checklist</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -39,8 +40,8 @@
                         <form role="form">
                             <div class="card-body col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nama Layanan</label>
-                                    <input id="nama_layanan" type="text" class="form-control @error('nama_layanan') is-invalid @enderror" name="nama_layanan" value="{{ old('nama_layanan') }}" placeholder="Masukkan nama layanan" required autocomplete="nama_layanan" autofocus>
+                                    <label for="exampleInputEmail1">Kode Checklist</label>
+                                    <input id="nama_layanan" type="text" class="form-control @error('nama_layanan') is-invalid @enderror" name="nama_layanan" value="{{ old('nama_layanan') }}" placeholder="Masukkan kode checklist" required autocomplete="nama_layanan" autofocus>
                                     @if ($errors->has("nama_layanan"))
                                             <div class="alert alert-danger" role="alert" style="margin-top: 5px;padding-top: 5px;padding-bottom: 5px;padding-left: 13px;padding-right: 5px;margin-right: 330px;" >
                                                 {{ ($errors->has("nama_layanan"))? $errors->first("nama_layanan"):""}}
@@ -51,8 +52,8 @@
                 <!-- /.card-body -->
                 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Tambah</button>
-                    <a href="/pages/items/layanan" class="btn btn-primary">Kembali</a>
+                    <button type="submit" class="btn btn-primary">Check</button>
+                    <a href="/pages/items/layanan" class="btn btn-success"><i class="fas fa-qrcode"> </i> Scan QR</a>
                 </div>
             </form>
         </form>
