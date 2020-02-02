@@ -54,10 +54,10 @@
                         <td>{!! $item->updated_at !!}</td>
                         <td>{!! $item->created_by !!}</td>
                         <td width="132px">
-                        <div class="">
+                        <center>
                           <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/items/object/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>
                           <a class="btn btn-danger btn-sm col-12 d-inline" href="/pages/items/object/delete/{{$item->id}}"><i class="fas fa-trash"></i> Hapus</a>
-                        </div>
+                        </center>
                         </td>
                       </tr>
                 @endforeach

@@ -36,8 +36,8 @@
                 <tr>
                   <th>Kode Lokasi</th>
                   <th>Nama Lokasi</th>
-                  {{-- <th>Created At</th>
-                  <th>Updated At</th> --}}
+                  <th>Created At</th>
+                  <th>Updated At</th>
                   <th>Act</th>
                 </tr>
                 </tr>
@@ -47,13 +47,21 @@
                 <tr>
                   <td>{!! $item->id !!}</td>
                   <td>{!! $item->nama_lokasi !!}</td>
-                  {{-- <td>{!! $item->created_at !!}</td>
-                  <td>{!! $item->updated_at !!}</td> --}}
+                  @if ($item->created_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->created_at !!}</td>
+                  @endif
+                  @if ($item->updated_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->updated_at !!}</td>
+                  @endif
                   <td width="132px">
-                    <div class="">
+                    <center>
                       <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/items/lokasi/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>
                       <a class="btn btn-danger btn-sm col-12 d-inline" href="/pages/items/lokasi/delete/{{$item->id}}"><i class="fas fa-trash"></i> Hapus</a>
-                    </div>
+                    </center>
                     </td>
                 </tr>
                 @endforeach

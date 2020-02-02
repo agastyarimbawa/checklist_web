@@ -48,16 +48,24 @@
                 <tr>
                   <td>{!! $item->id !!}</td>
                   <td>{!! $item->nama_layanan !!}</td>
-                  <td>{!! $item->created_at !!}</td>
-                  <td>{!! $item->updated_at !!}</td>
+                  @if ($item->created_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->created_at !!}</td>
+                  @endif
+                  @if ($item->updated_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->updated_at !!}</td>
+                  @endif
                   <td>{!! $item->created_by !!}</td>
                   <td width="132px">
-                    <div class="">
+                    <center>
                     <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/items/layanan/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>
                     <a class="btn btn-danger btn-sm col-12 d-inline" href="/pages/items/layanan/delete/{{$item->id}}"><i class="fas fa-trash"></i> Hapus</a>
                     {{-- <a class="btn btn-block btn-sm btn-success col-12 d-inline" href="/pages/items/layanan/edit/{{$item->id}}">Edit</a>
                     <a class="btn btn-block btn-sm btn-danger col-12 d-inline" href="/pages/items/layanan/delete/{{$item->id}}">Hapus</a> --}}
-                    </div>
+                    </center>
                   </td>
                 </tr>
                 @endforeach
