@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\ModelUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,11 +23,28 @@ class UserController extends Controller
         //return $listUser;
         return view ('pages.user.dashboard_user')->with('data',$listUser);
     }
-    //VIEW DATA INSERT
+
+//=====================================================================================//
+    
     public function tambah_user(){
         return view ('pages.user.tambah_user');
     }
-    //VIEW DATA EDIT
+    public function store(Request $request){
+        $alert=[
+            'required' => 'kolom wajib diisi/dipilih!'
+        ];
+        $this->validate($request,[
+            'nama_layanan' => 'required'
+        ], $alert);
+        DB::table('users')->insert([
+            'nama_layanan' => $request->nama_layanan
+        ], true);
+
+        return redirect ('/pages/items/layanan');
+    }
+    
+//=====================================================================================//
+
     public function edit_user($id){
         $listUser = \App\ModelUser::findOrFail($id);
         return view('pages.user.edit_user')->with('data',$listUser);
@@ -42,7 +61,9 @@ class UserController extends Controller
         $listUser->save();
         return redirect('/pages/user')->with('data',$listUser);
     }
-    //DELETE DATA
+    
+//=====================================================================================//
+
     public function destroy_user($id){
         $listUser = \App\ModelUser::findOrFail($id);
         

@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="mt-4 text-right">
-						<small>2020 &copy; Created By - Agas</small>
+						<small>{{ date("Y") }} &copy; Created By - Agas</small>
 					</div>
 				</div>
 				

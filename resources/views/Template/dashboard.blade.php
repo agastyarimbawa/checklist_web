@@ -202,7 +202,7 @@
 @yield('konten')
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2019-2020 <a href="http://steamcommunity.com/id/mumbo13">Agastya Arimbawa</a>.</strong>
+    <strong>Copyright &copy; {{ date("Y") }} <a href="http://steamcommunity.com/id/mumbo13">Agastya Arimbawa</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> Alpha Beta 1.0
@@ -258,6 +258,11 @@
       maintainAspectRatio : false,
       responsive : true,
     }
+    var donutChart = new Chart(donutChartCanvas, {
+      type: 'doughnut',
+      data: donutData,
+      options: donutOptions      
+    })
   })
 </script>
 <!-- Sparkline -->

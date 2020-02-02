@@ -53,10 +53,10 @@
                         <td>{!! $item->created_at !!}</td>
                         <td>{!! $item->updated_at !!}</td>
                         <td>{!! $item->created_by !!}</td>
-                        <td width="103px">
+                        <td width="132px">
                         <div class="">
-                          <a class="btn btn-block btn-sm btn-success col-12 d-inline" href="/pages/items/object/edit/{{$item->id}}">Edit</a>
-                            <a class="btn btn-block btn-sm btn-danger col-12 d-inline" href="/pages/items/object/delete/{{$item->id}}">Hapus</a>
+                          <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/items/object/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>
+                          <a class="btn btn-danger btn-sm col-12 d-inline" href="/pages/items/object/delete/{{$item->id}}"><i class="fas fa-trash"></i> Hapus</a>
                         </div>
                         </td>
                       </tr>
