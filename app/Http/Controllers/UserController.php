@@ -21,13 +21,13 @@ class UserController extends Controller
         $listUser = ModelUser::all(); //select * from 'table'
     
         //return $listUser;
-        return view ('pages.user.dashboard_user')->with('data',$listUser);
+        return view ('Pages.User.dashboard_user')->with('data',$listUser);
     }
 
 //=====================================================================================//
     
     public function tambah_user(){
-        return view ('pages.user.tambah_user');
+        return view ('Pages.User.tambah_user');
     }
     public function store(Request $request){
         $alert=[
@@ -36,7 +36,7 @@ class UserController extends Controller
         $this->validate($request,[
             'nama_layanan' => 'required'
         ], $alert);
-        DB::table('users')->insert([
+        \DB::table('users')->insert([
             'nama_layanan' => $request->nama_layanan
         ], true);
 
@@ -47,7 +47,7 @@ class UserController extends Controller
 
     public function edit_user($id){
         $listUser = \App\ModelUser::findOrFail($id);
-        return view('pages.user.edit_user')->with('data',$listUser);
+        return view('Pages.User.edit_user')->with('data',$listUser);
     }
     public function update_user($id, Request $request){
         $this->validate($request,[

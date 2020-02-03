@@ -24,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.otorisasi.indexAdmin');
+        return view('Pages.Otorisasi.indexAdmin');
     }
 }

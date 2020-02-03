@@ -15,7 +15,7 @@ class PerangkatController extends Controller
     public function index(){
         $perangkat = DB::table('view_perangkats')->get();
 
-        return view ('pages.items.perangkat.perangkat',['perangkat'=>$perangkat]);
+        return view ('Pages.Items.Perangkat.perangkat',['perangkat'=>$perangkat]);
     }
     
     //=====================================================================================//
@@ -24,7 +24,7 @@ class PerangkatController extends Controller
         $layanan = DB::table('layanans')->get();
         $objek = DB::table('objeks')->get();
 
-        return view ('pages.items.perangkat.tambah_perangkat',['layanan'=> $layanan, 'objek' => $objek]);
+        return view ('Pages.Items.Perangkat.tambah_perangkat',['layanan'=> $layanan, 'objek' => $objek]);
     }
     public function store(Request $request){
         if ($request->nama_layanan && $request->tipe_objeks == 0) {
@@ -54,7 +54,7 @@ class PerangkatController extends Controller
         $layanan = DB::table('layanans')->get();
         $objek = DB::table('objeks')->get();
         
-        return view('pages.items.perangkat.edit_perangkat',['perangkat' => $perangkat, 'layanan' => $layanan, 'objek' => $objek]);
+        return view('Pages.Items.Perangkat.edit_perangkat',['perangkat' => $perangkat, 'layanan' => $layanan, 'objek' => $objek]);
     }
     public function update($id, Request $request){
         if ($request->nama_layanan && $request->tipe_objeks == 0) {

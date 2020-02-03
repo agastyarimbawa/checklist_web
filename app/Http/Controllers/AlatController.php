@@ -13,20 +13,20 @@ class AlatController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $alat = DB::table('view_alats')->get();
+        $alat = \DB::table('view_alats')->get();
 
-        return view ('pages.items.alat.alat',['alat'=>$alat]);
+        return view ('Pages.Items.Alat.alat',['alat'=>$alat]);
     }
 
 //=====================================================================================//
 
     public function tambah(){
-        $layanan = DB::table('layanans')->get();
-        $objek = DB::table('objeks')->get();
-        $perangkat = DB::table('perangkats')->get();
-        $lokasi = DB::table('locations')->get();
+        $layanan = \DB::table('layanans')->get();
+        $objek = \DB::table('objeks')->get();
+        $perangkat = \DB::table('perangkats')->get();
+        $lokasi = \DB::table('locations')->get();
 
-        return view ('pages.items.alat.tambah_alat',['layanan'=>$layanan, 'objek'=>$objek, 'perangkat'=>$perangkat, 'lokasi'=>$lokasi]);
+        return view ('Pages.Items.Alat.tambah_alat',['layanan'=>$layanan, 'objek'=>$objek, 'perangkat'=>$perangkat, 'lokasi'=>$lokasi]);
     }
     public function store(){
         $alert=[
@@ -44,7 +44,7 @@ class AlatController extends Controller
             'status' => 'required'
         ], $alert);
         
-        DB::table('objeks')->insertTs([
+        \DB::table('objeks')->insertTs([
             'layanans_id' => $request->nama_layanan,
             'objeks_id' => $request->tipe_objeks,
             'perangkats_id' => $request->nama_perangkat,
@@ -68,7 +68,7 @@ class AlatController extends Controller
 //=====================================================================================//
 
     public function destroy($id){
-        DB::table('alats')->where('id', $id)->delete();
+        \DB::table('alats')->where('id', $id)->delete();
 
         return redirect('/pages/items/alats');
     }

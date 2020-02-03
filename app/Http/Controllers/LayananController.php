@@ -16,13 +16,13 @@ class LayananController extends Controller
     public function index(){
         $layanan = DB::table('view_layanans')->get();
         //return $listLayanan;
-        return view ('pages.items.layanan.layanan',['layanan'=> $layanan]);
+        return view ('Pages.Items.Layanan.layanan',['layanan'=> $layanan]);
     }
 
 //=====================================================================================//
 
     public function tambah(){
-        return view ('pages.items.layanan.tambah_layanan');
+        return view ('Pages.Items.Layanan.tambah_layanan');
     }
     public function store(Request $request){
         $alert=[
@@ -43,7 +43,7 @@ class LayananController extends Controller
     public function edit($id){
         $layanan = DB::table('layanans')->where('id', $id)->get();
 
-        return view('pages.items.layanan.edit_layanan',['layanan' => $layanan]);
+        return view('Pages.Items.Layanan.edit_layanan',['layanan' => $layanan]);
     }
     public function update(Request $request){
         $alert=[

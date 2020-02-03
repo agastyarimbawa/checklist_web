@@ -16,14 +16,14 @@ class ObjekController extends Controller
         //get table
         $objek = DB::table('view_objeks')->get();
         //return view
-        return view ('pages.items.object.object',['objek'=> $objek]);
+        return view ('Pages.Items.Object.object',['objek'=> $objek]);
     }
 
 //=====================================================================================//
     
     public function tambah(){
         $layanan = DB::table('layanans')->get();
-        return view ('pages.items.object.tambah_object',['layanan'=> $layanan]);
+        return view ('Pages.Items.Object.tambah_object',['layanan'=> $layanan]);
     }
     public function store(Request $request){
         if($request->nama_layanan == 0){
@@ -49,7 +49,7 @@ class ObjekController extends Controller
         $objek = DB::table('objeks')->where('id', $id)->get();
         $layanan = DB::table('layanans')->get();
 
-        return view('pages.items.object.edit_object',['objek' => $objek, 'layanan' => $layanan]);
+        return view('Pages.Items.Object.edit_object',['objek' => $objek, 'layanan' => $layanan]);
     }
     public function update($id, Request $request){
         $alert=[

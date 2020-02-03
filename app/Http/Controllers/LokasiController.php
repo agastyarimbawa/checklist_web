@@ -15,13 +15,13 @@ class LokasiController extends Controller
     public function index(){
         $lokasi = DB::table('locations')->get();
         //return $listLayanan;
-        return view ('pages.items.lokasi.lokasi',['lokasi'=> $lokasi]);
+        return view ('Pages.Items.Lokasi.lokasi',['lokasi'=> $lokasi]);
     }
 
 //=====================================================================================//
 
     public function tambah(){
-        return view ('pages.items.lokasi.tambah_lokasi');
+        return view ('Pages.Items.Lokasi.tambah_lokasi');
     }
     public function store(Request $request){
         $alert=[
@@ -42,7 +42,7 @@ class LokasiController extends Controller
     public function edit($id){
         $lokasi = DB::table('locations')->where('id', $id)->get();
 
-        return view('pages.items.lokasi.edit_lokasi',['lokasi' => $lokasi]);
+        return view('Pages.Items.Lokasi.edit_lokasi',['lokasi' => $lokasi]);
     }
     public function update(Request $request){
         $alert=[
