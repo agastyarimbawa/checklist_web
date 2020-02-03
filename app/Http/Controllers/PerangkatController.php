@@ -75,7 +75,7 @@ class PerangkatController extends Controller
         ]);
             
             return redirect('/pages/items/perangkat');
-        }
+    }
             
     //=====================================================================================//
 

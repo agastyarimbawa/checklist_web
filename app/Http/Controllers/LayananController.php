@@ -54,7 +54,7 @@ class LayananController extends Controller
         ], $alert);
         DB::table('layanans')->where('id', $request->id)->updateTs([
             'nama_layanan' => $request->nama_layanan
-        ];
+        ]);
         
         return redirect('/pages/items/layanan');
     }

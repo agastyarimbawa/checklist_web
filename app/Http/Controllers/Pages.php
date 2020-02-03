@@ -13,10 +13,10 @@ class Pages extends Controller
 
 //=======================================ADMIN=========================================//
     public function index(){
-        $layanan = DB::table('layanans')->count();
-        $alat = DB::table('layanans')->count();
+        $layanan = \DB::table('layanans')->count();
+        $alat = \DB::table('layanans')->count();
         
-        return view ('pages.otorisasi.indexAdmin',['layanan'=> $layanan], ['alat'=> $alat]);
+        return view ('Pages.Otorisasi.indexAdmin',['layanan'=> $layanan], ['alat'=> $alat]);
     }
 //=======================================ADMIN/=========================================//
 
@@ -24,10 +24,10 @@ class Pages extends Controller
 
 //======================================TEKNISI=========================================//
     public function teknisi(){
-        $layanan = DB::table('layanans')->count();
-        $alat = DB::table('layanans')->count();
+        $layanan = \DB::table('layanans')->count();
+        $alat = \DB::table('layanans')->count();
         
-        return view ('pages.otorisasi.indexAdmin',['layanan'=> $layanan], ['alat'=> $alat]);
+        return view ('Pages.Otorisasi.indexAdmin',['layanan'=> $layanan], ['alat'=> $alat]);
     }
 //======================================TEKNISI=========================================//
 }

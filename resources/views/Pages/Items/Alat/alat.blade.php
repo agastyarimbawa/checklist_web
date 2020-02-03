@@ -45,8 +45,9 @@
                   <th>Serial Number</th>
                   <th>Year Construct</th>
                   <th>Status</th> --}}
-                  {{-- <th>Created At</th> --}}
-                  {{-- <th>Updated At</th> --}}
+                  <th>Created At</th>
+                  <th>Updated At</th>
+                  <th>Created By</th>
                   <th>Act</th>
                 </tr>
                 </tr>
@@ -65,8 +66,17 @@
                   <td>{!! $item->serial_number !!}</td>
                   <td>{!! $item->year_construct !!}</td>
                   <td>{!! $item->status !!}</td> --}}
-                  {{-- <td>{!! $item->created_at->format('d/m/Y') !!}</td> --}}
-                  {{-- <td>{!! $item->updated_at->format('d/m/Y') !!}</td> --}}
+                  @if ($item->created_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->created_at !!}</td>
+                  @endif
+                  @if ($item->updated_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->updated_at !!}</td>
+                  @endif
+                  <td>{!! $item->created_by !!}</td>
                   <td width="132px">
                     <center>
                       <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/items/alat/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>

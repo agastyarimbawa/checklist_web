@@ -44,7 +44,7 @@ class AlatController extends Controller
             'status' => 'required'
         ], $alert);
         
-        DB::table('objeks')->insert([
+        DB::table('objeks')->insertTs([
             'layanans_id' => $request->nama_layanan,
             'objeks_id' => $request->tipe_objeks,
             'perangkats_id' => $request->nama_perangkat,
