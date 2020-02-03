@@ -38,8 +38,9 @@
                   <th>Nama Layanan</th>
                   <th>Object Type</th>
                   <th>Nama Perangkat</th>
-                  {{-- <th>Created At</th> --}}
-                  {{-- <th>Updated At</th> --}}
+                  <th>Created At</th>
+                  <th>Updated At</th> 
+                  <th>Created By</th> 
                   <th>Act</th>
                 </tr>
                 </tr>
@@ -51,9 +52,18 @@
                   <td>{!! $item->nama_layanan !!}</td>
                   <td>{!! $item->tipe_objeks !!}</td>
                   <td>{!! $item->nama_perangkats !!}</td>
-                  {{-- <td>{!! $item->created_at->format('d/m/Y') !!}</td> --}}
-                  {{-- <td>{!! $item->updated_at->format('d/m/Y') !!}</td> --}}
-                  <td width="132px">
+                  @if ($item->created_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->created_at !!}</td>
+                  @endif
+                  @if ($item->updated_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->updated_at !!}</td>
+                  @endif
+                  <td>{!! $item->created_by !!}</td>
+                  <td width="135px">
                     <center>
                       <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/items/perangkat/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>
                       <a class="btn btn-danger btn-sm col-12 d-inline" href="/pages/items/perangkat/delete/{{$item->id}}"><i class="fas fa-trash"></i> Hapus</a>

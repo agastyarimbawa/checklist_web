@@ -38,11 +38,11 @@ class PerangkatController extends Controller
             ], $alert);
         }
         
-        DB::table('perangkats')->insert([
+        DB::table('perangkats')->insertTs([
             'layanans_id' => $request->nama_layanan,
             'objeks_id' => $request->tipe_objeks,
             'nama_perangkats' => $request->nama_perangkats
-            ]);
+        ], true);
 
             return redirect ('/pages/items/perangkat');
         }
@@ -68,11 +68,11 @@ class PerangkatController extends Controller
             ], $alert);
         }
 
-        DB::table('perangkats')->where('id', $request->id)->update([
+        DB::table('perangkats')->where('id', $request->id)->updateTs([
             'layanans_id' => $request->nama_layanan,
             'objeks_id' => $request->tipe_objeks,
             'nama_perangkats' => $request->nama_perangkats
-            ]);
+        ]);
             
             return redirect('/pages/items/perangkat');
         }
