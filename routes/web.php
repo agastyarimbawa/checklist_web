@@ -13,78 +13,78 @@
 Route::get('/','Auth\LoginController@showLoginForm');
 
 Route::group(['middleware' => ['auth']], function(){
-    Route::get('/home', 'pages@index');
+    Route::get('/home', 'Pages@index');
 
     //cek kondisi
-    Route::get('/checklist', 'reportcontroller@checklist');
+    Route::get('/checklist', 'ReportController@checklist');
 });
 
 Route::group(['middleware' => ['auth','checkRole:admin']], function(){
     //user
-    Route::get('/pages/user','usercontroller@user');
-    Route::get('/pages/user/tambah','usercontroller@tambah_user');
-    Route::get('/pages/user/edit/{id}','usercontroller@edit_user');
-    Route::post('/pages/user/update/{id}','usercontroller@update_user');
-    Route::get('/pages/user/delete/{id}','usercontroller@destroy_user');
+    Route::get('/pages/user','UserController@user');
+    Route::get('/pages/user/tambah','UserController@tambah_user');
+    Route::get('/pages/user/edit/{id}','UserController@edit_user');
+    Route::post('/pages/user/update/{id}','UserController@update_user');
+    Route::get('/pages/user/delete/{id}','UserController@destroy_user');
     
     
     
     //layanan
-    Route::get('/pages/items/layanan','layanancontroller@index');
-    Route::get('/pages/items/layanan/tambah','layanancontroller@tambah');
-    Route::post('/pages/items/layanan/insert','layanancontroller@store');
-    Route::get('/pages/items/layanan/edit/{id}','layanancontroller@edit');
-    Route::post('/pages/items/layanan/update/{id}','layanancontroller@update');
-    Route::get('/pages/items/layanan/delete/{id}','layanancontroller@destroy');
+    Route::get('/pages/items/layanan','LayananController@index');
+    Route::get('/pages/items/layanan/tambah','LayananController@tambah');
+    Route::post('/pages/items/layanan/insert','LayananController@store');
+    Route::get('/pages/items/layanan/edit/{id}','LayananController@edit');
+    Route::post('/pages/items/layanan/update/{id}','LayananController@update');
+    Route::get('/pages/items/layanan/delete/{id}','LayananController@destroy');
     
     
     
     //object
-    Route::get('/pages/items/object','objekcontroller@index');
-    Route::get('/pages/items/object/tambah','objekcontroller@tambah');
-    Route::post('/pages/items/object/insert','objekcontroller@store');
-    Route::get('/pages/items/object/edit/{id}','objekcontroller@edit');
-    Route::post('/pages/items/object/update/{id}','objekcontroller@update');
-    Route::get('/pages/items/object/delete/{id}','objekcontroller@destroy');
+    Route::get('/pages/items/object','ObjekController@index');
+    Route::get('/pages/items/object/tambah','ObjekController@tambah');
+    Route::post('/pages/items/object/insert','ObjekController@store');
+    Route::get('/pages/items/object/edit/{id}','ObjekController@edit');
+    Route::post('/pages/items/object/update/{id}','ObjekController@update');
+    Route::get('/pages/items/object/delete/{id}','ObjekController@destroy');
 
     
     
     //perangkat
-    Route::get('/pages/items/perangkat','perangkatcontroller@index');
-    Route::get('/pages/items/perangkat/tambah','perangkatcontroller@tambah');
-    Route::post('/pages/items/perangkat/insert','perangkatcontroller@store');
-    Route::get('/pages/items/perangkat/edit/{id}','perangkatcontroller@edit');
-    Route::post('/pages/items/perangkat/update/{id}','perangkatcontroller@update');
-    Route::get('/pages/items/perangkat/delete/{id}','perangkatcontroller@destroy');
+    Route::get('/pages/items/perangkat','PerangkatController@index');
+    Route::get('/pages/items/perangkat/tambah','PerangkatController@tambah');
+    Route::post('/pages/items/perangkat/insert','PerangkatController@store');
+    Route::get('/pages/items/perangkat/edit/{id}','PerangkatController@edit');
+    Route::post('/pages/items/perangkat/update/{id}','PerangkatController@update');
+    Route::get('/pages/items/perangkat/delete/{id}','PerangkatController@destroy');
     
     
     
     //alat
-    Route::get('/pages/items/alat','alatcontroller@index');
-    Route::get('/pages/items/alat/tambah','alatcontroller@tambah');
-    Route::get('/pages/items/alat/edit/{id}','alatcontroller@edit');
-    Route::post('/pages/items/alat/update/{id}','alatcontroller@update');
-    Route::get('/pages/items/alat/delete/{id}','alatcontroller@destroy');
+    Route::get('/pages/items/alat','AlatController@index');
+    Route::get('/pages/items/alat/tambah','AlatController@tambah');
+    Route::get('/pages/items/alat/edit/{id}','AlatController@edit');
+    Route::post('/pages/items/alat/update/{id}','AlatController@update');
+    Route::get('/pages/items/alat/delete/{id}','AlatController@destroy');
     
     
     
     //lokasi
-    Route::get('/pages/items/lokasi','lokasicontroller@index');
-    Route::get('/pages/items/lokasi/tambah','lokasicontroller@tambah');
-    Route::post('/pages/items/lokasi/insert','lokasicontroller@store');
-    Route::get('/pages/items/lokasi/edit/{id}','lokasicontroller@edit');
-    Route::post('/pages/items/lokasi/update/{id}','lokasicontroller@update');
-    Route::get('/pages/items/lokasi/delete/{id}','lokasicontroller@destroy');
+    Route::get('/pages/items/lokasi','LokasiController@index');
+    Route::get('/pages/items/lokasi/tambah','LokasiController@tambah');
+    Route::post('/pages/items/lokasi/insert','LokasiController@store');
+    Route::get('/pages/items/lokasi/edit/{id}','LokasiController@edit');
+    Route::post('/pages/items/lokasi/update/{id}','LokasiController@update');
+    Route::get('/pages/items/lokasi/delete/{id}','LokasiController@destroy');
 
 
 
     //checklist
-    Route::get('/pages/items/checklist','checklistcontroller@index');
-    Route::get('/pages/items/checklist/tambah','checklistcontroller@tambah');
-    Route::post('/pages/items/checklist/insert','checklistcontroller@store');
-    Route::get('/pages/items/checklist/edit/{id}','checklistcontroller@edit');
-    Route::post('/pages/items/checklist/update/{id}','checklistcontroller@update');
-    Route::get('/pages/items/checklist/delete/{id}','checklistcontroller@destroy');
+    Route::get('/pages/items/checklist','ChecklistController@index');
+    Route::get('/pages/items/checklist/tambah','ChecklistController@tambah');
+    Route::post('/pages/items/checklist/insert','ChecklistController@store');
+    Route::get('/pages/items/checklist/edit/{id}','ChecklistController@edit');
+    Route::post('/pages/items/checklist/update/{id}','ChecklistController@update');
+    Route::get('/pages/items/checklist/delete/{id}','ChecklistController@destroy');
 });
 
 

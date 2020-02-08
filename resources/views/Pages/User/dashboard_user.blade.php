@@ -1,4 +1,4 @@
-@extends('template.dashboard')
+@extends('Template.dashboard')
 @section('title', 'Checklist Peralatan')
 
 @section('konten')
@@ -48,14 +48,24 @@
                   <td>{!! $item->id !!}</td>
                   <td>{!! $item->name !!}</td>
                   <td>{!! $item->email !!}</td>
-                  <td>{!! $item->created_at->format('d/M/Y') !!}</td>
-                  <td>{!! $item->updated_at->format('d/M/Y') !!}</td>
-                  <td width="103px">
-                    <div class="">
-                    <a class="btn btn-block btn-sm btn-success col-12 d-inline" href="/pages/user/edit/{{$item->id}}">Edit</a>
-                    <a class="btn btn-block btn-sm btn-danger col-12 d-inline" href="/pages/user/delete/{{$item->id}}">Hapus</a>
-                    </div>
-                  </td>
+                  @if ($item->created_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->created_at !!}</td>
+                  @endif
+                  @if ($item->updated_at == "")
+                    <td>{{ "-" }}</td>
+                  @else
+                    <td>{!! $item->updated_at !!}</td>
+                  @endif
+                    <td width="132px">
+                      <center>
+                      <a class="btn btn-info btn-sm col-12 d-inline" href="/pages/user/edit/{{$item->id}}"><i class="fas fa-pencil-alt"></i> Edit</a>
+                      <a class="btn btn-danger btn-sm col-12 d-inline" href="/pages/user/delete/{{$item->id}}"><i class="fas fa-trash"></i> Hapus</a>
+                      {{-- <a class="btn btn-block btn-sm btn-success col-12 d-inline" href="/pages/items/layanan/edit/{{$item->id}}">Edit</a>
+                      <a class="btn btn-block btn-sm btn-danger col-12 d-inline" href="/pages/items/layanan/delete/{{$item->id}}">Hapus</a> --}}
+                      </center>
+                    </td>
                 </tr>
                 @endforeach
                 </tfoot>
